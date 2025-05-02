@@ -40,8 +40,7 @@ function draw() {
   // 顯示圖形內容在視訊畫面的上方
   translate(width, 0); // 恢復原點
   scale(-1, 1); // 恢復正常方向
-  image(graphics, width * 0.1, height * 0.1 - graphics.height); // 將圖形顯示在視訊畫面上方
+  image(graphics, width * 0.1, height * 0.1 - graphics.height - 10); // 將圖形顯示在視訊畫面上方，並留出間距
 
   frameCounter++; // 增加幀計數器
 }
-
