@@ -21,8 +21,8 @@ function draw() {
   scale(-1, 1);
   image(capture, width * 0.1, height * 0.1, width * 0.8, height * 0.8); // 顯示翻轉後的影像
 
-  // 每隔 5 幀更新一次 graphics 的內容
-  if (frameCounter % 5 === 0) {
+  // 每隔 1 幀更新一次 graphics 的內容
+  if (frameCounter % 1 === 0) {
     graphics.background(0); // 設定背景為黑色
     for (let x = 0; x < graphics.width; x += 20) {
       for (let y = 0; y < graphics.height; y += 20) {
