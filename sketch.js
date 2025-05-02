@@ -19,7 +19,7 @@ function draw() {
   // 水平翻轉攝影機影像
   push(); // 儲存當前繪圖狀態
   translate(width, 0); // 將畫布的原點移到右上角
-  scale(-1, 1); // 水平翻轉畫布
+  scale(1, -1); // 水平翻轉畫布
   image(capture, width * 0.1, height * 0.1, width * 0.8, height * 0.8); // 顯示翻轉後的影像
   pop(); // 恢復繪圖狀態
 
