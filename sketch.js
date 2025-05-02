@@ -26,7 +26,10 @@ function draw() {
     graphics.background(0); // 設定背景為黑色
     for (let x = 0; x < graphics.width; x += 20) {
       for (let y = 0; y < graphics.height; y += 20) {
-        let col = capture.get(x, y); // 擷取 capture 中相對應位置的顏色
+        // 計算 capture 中對應的座標
+        let captureX = int(map(x, 0, graphics.width, 0, capture.width));
+        let captureY = int(map(y, 0, graphics.height, 0, capture.height));
+        let col = capture.get(captureX, captureY); // 擷取 capture 中相對應位置的顏色
         graphics.fill(col); // 設定圓的顏色
         graphics.noStroke();
         graphics.ellipse(x + 10, y + 10, 15, 15); // 繪製寬高為 15 的圓
@@ -41,3 +44,4 @@ function draw() {
 
   frameCounter++; // 增加幀計數器
 }
+
