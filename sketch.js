@@ -21,6 +21,10 @@ function draw() {
   scale(-1, 1);
   image(capture, width * 0.1, height * 0.1, width * 0.8, height * 0.8); // 顯示翻轉後的影像
 
+  // 恢復正常方向，準備繪製 graphics
+  translate(width, 0);
+  scale(-1, 1);
+
   // 每隔 1 幀更新一次 graphics 的內容
   if (frameCounter % 1 === 0) {
     graphics.background(0); // 設定背景為黑色
@@ -37,10 +41,8 @@ function draw() {
     }
   }
 
-  // 顯示圖形內容在視訊畫面的上方
-  translate(width, 0); // 恢復原點
-  scale(-1, 1); // 恢復正常方向
-  image(graphics, width * 0.1, height * 0.1 - graphics.height - 10); // 將圖形顯示在視訊畫面上方，並留出間距
+  // 將 graphics 顯示在視訊畫面的上層
+  image(graphics, width * 0.1, height * 0.1, width * 0.8, height * 0.8); // 覆蓋在視訊畫面上
 
   frameCounter++; // 增加幀計數器
 }
