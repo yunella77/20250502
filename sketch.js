@@ -17,13 +17,9 @@ function draw() {
   background(0); // 確保背景保持黑色
 
   // 水平翻轉攝影機影像
-  translate(width, 0);
-  scale(-1, 1);
+  translate(width, 0); // 將畫布的原點移到右上角
+  scale(-1, 1); // 水平翻轉畫布
   image(capture, width * 0.1, height * 0.1, width * 0.8, height * 0.8); // 顯示翻轉後的影像
-
-  // 恢復正常方向，準備繪製 graphics
-  translate(width, 0);
-  scale(-1, 1);
 
   // 每隔 1 幀更新一次 graphics 的內容
   if (frameCounter % 1 === 0) {
@@ -42,6 +38,8 @@ function draw() {
   }
 
   // 將 graphics 顯示在視訊畫面的上層
+  translate(width, 0); // 恢復原點
+  scale(-1, 1); // 恢復正常方向
   image(graphics, width * 0.1, height * 0.1, width * 0.8, height * 0.8); // 覆蓋在視訊畫面上
 
   frameCounter++; // 增加幀計數器
